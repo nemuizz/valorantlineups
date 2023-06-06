@@ -17,11 +17,19 @@
     </div>
 
     <div class="field">
-      <%# form.collection_select %>
+      <%= form.collection_select(:agent_id, @agents, :id, :agent_name) %>
     </div>
 
     <div class="field">
-      <%# form.collection_select %>
+      <%= form.collection_select(:map_id, @maps, :id, :map_name) %>
+    </div>
+
+    <div class="field">
+      <%= form.file_field :position_image %>    
+    </div>
+
+    <div class="field">
+      <%= form.file_field :angle_image %>    
     </div>
 
     <div class="field">

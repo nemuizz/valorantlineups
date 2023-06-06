@@ -1,2 +1,9 @@
 <div id="<%= dom_id post %>">
+	<%= post.title %>
+	<% if post.position_image.attached? %>
+		<%= image_tag post.position_image %>
+	<% end %>
+	<% if post.angle_image.attached? %>
+		<%= image_tag post.angle_image %>
+	<% end %>
 </div>

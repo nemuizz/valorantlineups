@@ -13,15 +13,22 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @agents = Agent.all
+    @maps = Map.all
   end
 
   # GET /posts/1/edit
   def edit
+    @agents = Agent.all
+    @maps = Map.all
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    
+    
 
     respond_to do |format|
       if @post.save
@@ -66,5 +73,6 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.fetch(:post, {})
+      params.require(:post).permit(:title, :map_id, :agent_id, :content, :position_image, :angle_image )
     end
 end
