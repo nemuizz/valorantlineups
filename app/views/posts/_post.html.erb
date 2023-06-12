@@ -1,9 +1,14 @@
 <div id="<%= dom_id post %>">
-	<%= post.title %>
-	<% if post.position_image.attached? %>
-		<%= image_tag post.position_image %>
-	<% end %>
-	<% if post.angle_image.attached? %>
-		<%= image_tag post.angle_image %>
-	<% end %>
+	<h2><%= post.title %></h2>
+	<div class="image-container">
+		<% if post.hit_image.attached? %>
+			<%= image_tag post.hit_image, width: '30%', height: '30%' %> <%#size 709x400%>
+		<% end %>
+		<% if post.position_image.attached? %>
+			<%= image_tag post.position_image, width: '30%', height: '30%' %> 
+		<% end %>
+		<% if post.angle_image.attached? %>
+			<%= image_tag post.angle_image, width: '30%', height: '30%' %>
+		<% end %>
+	</div>
 </div>

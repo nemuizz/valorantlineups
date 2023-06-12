@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_q, only: [:index, :search]
 
   # GET /posts or /posts.json
   def index
@@ -64,6 +65,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @results = @q.result
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -73,6 +78,11 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.fetch(:post, {})
-      params.require(:post).permit(:title, :map_id, :agent_id, :content, :position_image, :angle_image )
+      params.require(:post).permit(:title, :map_id, :agent_id, :content, :position_image, :angle_image, :hit_image )
     end
+
+    def set_q
+      @q = Post.ransack(params[:q])
+    end
+
 end

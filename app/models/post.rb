@@ -11,4 +11,11 @@ class Post < ApplicationRecord
 
     has_one_attached :position_image
     has_one_attached :angle_image
+    has_one_attached :hit_image
+
+    def self.ransackable_attributes(auth_object = nil)
+        ["agent_id", "content", "created_at", "id", "map_id", "title", "updated_at", "user_id"]
+        
+      end
+
 end

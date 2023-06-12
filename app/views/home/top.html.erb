@@ -1,3 +1,21 @@
 <div class="container">
-    <%=  %>
+    <%= search_form_for @q, url: search_posts_path do |f| %>
+        <div>
+            <% @agents.each do |agent| %>
+                <%= f.radio_button :agent_id_eq, agent.id, :id => "agent#{agent.id}", :class => "radio_btn" %>
+                <%= f.label :agent_id_eq, image_tag("/agent_images/#{agent.agent_name}.png"), :for => "agent#{agent.id}" %>
+            <% end %>
+        </div>
+        <div>
+						<% @maps.each do |map| %>
+							<%= f.radio_button :map_id_eq, map.id, :id => "map#{map.id}", :class => "radio_btn" %>
+							<%= f.label :map_id_eq, image_tag("/map_images/#{map.map_name}.png"), :for => "map#{map.id}" %>
+						<% end %>
+        </div>
+				<div>
+						<%= f.search_field :content_or_title_cont %>		
+				</div>
+        <br>
+        <%= f.submit "search" %>
+    <% end %>
 </div>

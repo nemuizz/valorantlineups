@@ -19,3 +19,16 @@ body{
 #navbarNav{
     justify-content: flex-end;
 }
+.radio_btn{
+    display: none;
+}
+.radio_btn + label img {
+    opacity: 0.8;
+}
+.radio_btn:checked + label img{
+    opacity: 1;
+    border: solid rgb(212, 177, 22) 2px;
+}
+.radio_btn:hover + label img{
+    opacity: 1;
+}

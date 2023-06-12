@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Searched by:  </h1>
+    <div class="posts">
+        <% @results.each do |post| %>
+            <%= render post %>
+            <p>
+                <%= link_to "Show this post", post %>
+            </p>
+        <% end %>    
+    </div>
+</div>
