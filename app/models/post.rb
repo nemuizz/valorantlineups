@@ -16,6 +16,17 @@ class Post < ApplicationRecord
     def self.ransackable_attributes(auth_object = nil)
         ["agent_id", "content", "created_at", "id", "map_id", "title", "updated_at", "user_id"]
         
-      end
+    end
+
+    def map_name
+      map = Map.find_by(id: self.map_id)
+      return map.map_name
+
+    end
+
+    def agent_name
+      agent = Agent.find_by(id: self.agent_id)
+      return agent.agent_name
+    end
 
 end

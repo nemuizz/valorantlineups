@@ -1,12 +1,40 @@
 
 
 <div class="container">
-  <%= render @post %>
-
-  <div>
+  <%# render @post %>
+  <div class="row mt-4">
+    <h2><%= @post.title %></h2>
+    <%= "#{@post.map_name} / #{@post.agent_name}" %>
+  </div>
+  <div class="row mt-4">
+    <div class="col-8">
+      <% if @post.hit_image.attached? %>
+        <%= image_tag @post.hit_image, class: "img-fluid" %> <%#size 709x400%>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <p class="post-content"><%= @post.content %></p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col">
+      <h3>立ち位置</h3>
+      <% if @post.position_image.attached? %>
+        <%= image_tag @post.position_image, class: "img-fluid" %> 
+      <% end %>
+    </div>
+    <div class="col">
+      <h3>視点</h3>
+      <% if @post.angle_image.attached? %>
+        <%= image_tag @post.angle_image, class: "img-fluid" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <p>
     <%= link_to "Edit this post", edit_post_path(@post) %> |
     <%= link_to "Back to posts", posts_path %>
-
+    </p>
     <%= button_to "Destroy this post", @post, method: :delete %>
   </div>
 </div>

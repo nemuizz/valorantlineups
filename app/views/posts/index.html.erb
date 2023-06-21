@@ -1,13 +1,28 @@
 <div class="container">
+  <div class="mt-4">
+    <%= search_form_for @q, url: search_posts_path do |f| %>
+            
+      <%= f.collection_select(:agent_id, @agents, :id, :agent_name) %>
+      
+      
+      <%= f.collection_select(:map_id, @maps, :id, :map_name) %>
+      
 
+    <%= f.search_field :content_or_title_cont %>		
+
+      
+      <%= f.submit "search" %>
+    <% end %>
+  </div>
   <h1>Posts</h1>
 
-  <div id="posts">
+  <div id="posts" class="mt-2">
     <% @posts.each do |post| %>
-      <%= render post %>
-      <p>
-        <%= link_to "Show this post", post %>
-      </p>
+      <%= link_to post do %>
+        <div class="post">
+          <%= render post %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 

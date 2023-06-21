@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_q, only: [:index, :search]
+  before_action :set_map_and_agent, only: [:new, :edit, :search, :index]
 
   # GET /posts or /posts.json
   def index
@@ -14,14 +15,12 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @agents = Agent.all
-    @maps = Map.all
+    
   end
 
   # GET /posts/1/edit
   def edit
-    @agents = Agent.all
-    @maps = Map.all
+    
   end
 
   # POST /posts or /posts.json
@@ -67,6 +66,7 @@ class PostsController < ApplicationController
 
   def search
     @results = @q.result
+    
   end
 
   private
@@ -83,6 +83,11 @@ class PostsController < ApplicationController
 
     def set_q
       @q = Post.ransack(params[:q])
+    end
+
+    def set_map_and_agent
+      @maps = Map.all
+      @agents = Agent.all
     end
 
 end

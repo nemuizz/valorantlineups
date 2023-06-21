@@ -11,38 +11,62 @@
     </div>
   <% end %>
   
-  <div>
-    <div class="field">
-      <%= form.text_field :title %>
-    </div>
+  <div class="row">
+		<div class="col-7">				
+			<div class="field mt-3 mb-3">
+			<%= form.label :title, "タイトル：" %>
+				<%= form.text_field :title %>
+			</div>
 
-    <div class="field">
-      <%= form.collection_select(:agent_id, @agents, :id, :agent_name) %>
-    </div>
+			<div class="field mb-3">
+				<%= form.label :agent_id, "エージェント：" %>    
+				<%= form.collection_select(:agent_id, @agents, :id, :agent_name) %>
+			</div>
 
-    <div class="field">
-      <%= form.collection_select(:map_id, @maps, :id, :map_name) %>
-    </div>
+			<div class="field mb-3">
+			<%= form.label :map_id, "マップ：" %>
+				<%= form.collection_select(:map_id, @maps, :id, :map_name) %>
+			</div>
 
-    <div class="field">
-      <%= form.file_field :hit_image %>    
-    </div>
+			<div class="field mb-3">
+			<%= form.label :hit_image, "着弾地点の画像を選択してください：" %>
+				<%= form.file_field :hit_image %>    
+			</div>
 
-    <div class="field">
-      <%= form.file_field :position_image %>    
-    </div>
+			<div class="field mb-3">
+				<%= form.label :position_image, "立ち位置の画像を選択してください：" %>
+				<%= form.file_field :position_image %>    
+			</div>
 
-    <div class="field">
-      <%= form.file_field :angle_image %>    
-    </div>
+			<div class="field mb-3">
+			<%= form.label :angle_image, "視点の画像を選択してください：" %>
+				<%= form.file_field :angle_image %>    
+			</div>
 
-    <div class="field">
-      <%= form.text_area :content %>
-    </div>
+			<div class="field mb-3">
+				<%= form.label :content, "詳細説明" %>
+				<%= form.text_area :content, size: "40x5" %>
+			</div>
 
-    <div class="field">
-      <%= form.submit %>
-    </div>
-
+			<div class="field">
+				<%= form.submit %>
+			</div>
+		</div>
+		<div class="col">	
+			<h3>投稿の際には下記を参考にしてください</h3>
+				<ul>
+					<li class="mt-3">
+						タイトル： 投稿のタイトルを入力してください。タイトルには、<strong>使用するスキル名とマップ中の場所</strong>を記述してください。<br>
+						(例) Aサイトクリア用リコン
+					</li>
+					<li class="mt-3">
+						画像は・着弾地点・立ち位置・スキル使用時の視点 の3つスクリーンショットを選択してください。
+					</li>
+					<li class="mt-3">
+						詳細説明は、投稿する定点についての説明を記述してください。<br>
+						その定点を使用することで得られる利点や、想定されるタイミング、注意点、立ち位置や視点を合わせる上での目印など
+					</li>
+				</ul>
+		</div>
   </div>
 <% end %>

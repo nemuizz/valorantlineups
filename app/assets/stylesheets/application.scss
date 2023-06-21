@@ -12,6 +12,25 @@
  */
 @import "bootstrap";
 
+/*universal layouts*/
+a{
+    text-decoration: none;
+    color: #212529;
+}
+
+.post-content{
+    white-space: pre-wrap;
+}
+
+textarea{
+    vertical-align: top;
+}
+
+.container{
+    max-width: 80%;
+}
+
+/*top.html.erb*/
 body{
     background-color: #ece8e1;
 }
@@ -28,7 +47,25 @@ body{
 .radio_btn:checked + label img{
     opacity: 1;
     border: solid rgb(212, 177, 22) 2px;
+    border-radius: 3%;
 }
 .radio_btn:hover + label img{
     opacity: 1;
+}
+.radio_btn{
+    margin: 5px;
+}
+.mt30{
+    margin-top: 30px;
+}
+.icon-container img{
+    margin: 3px;
+}
+
+/* index.html */
+
+.post{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: #212529 solid 1px;
 }
