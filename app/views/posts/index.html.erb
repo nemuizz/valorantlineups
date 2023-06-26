@@ -2,10 +2,10 @@
   <div class="mt-4">
     <%= search_form_for @q, url: search_posts_path do |f| %>
             
-      <%= f.collection_select(:agent_id, @agents, :id, :agent_name) %>
+      <%= f.collection_select(:agent_id_eq, @agents, :id, :agent_name) %>
       
       
-      <%= f.collection_select(:map_id, @maps, :id, :map_name) %>
+      <%= f.collection_select(:map_id_eq, @maps, :id, :map_name) %>
       
 
     <%= f.search_field :content_or_title_cont %>		

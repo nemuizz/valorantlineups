@@ -64,10 +64,12 @@ class PostsController < ApplicationController
     end
   end
 
-  def search
-    @results = @q.result
+  def search   
+    @posts = @q.result(distinct: true)
     
   end
+
+ 
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -79,6 +81,7 @@ class PostsController < ApplicationController
     def post_params
       params.fetch(:post, {})
       params.require(:post).permit(:title, :map_id, :agent_id, :content, :position_image, :angle_image, :hit_image )
+      params.require(:q).permit(:sorts)
     end
 
     def set_q

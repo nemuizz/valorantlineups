@@ -1,20 +1,9 @@
 <div class="container">
-    <h1>Searched by:  </h1>
-    <%= search_form_for @q, url: search_posts_path do |f| %>
-        
-        <%= f.collection_select(:agent_id, @agents, :id, :agent_name) %>
-        
-        
-        <%= f.collection_select(:map_id, @maps, :id, :map_name) %>
-        
-			
-		<%= f.search_field :content_or_title_cont %>		
-			
-        
-        <%= f.submit "search" %>
-    <% end %>
+    <h1>Searched by:  </h1><%= params[:q] %>
+    
+        <%= sort_link @q, :updated_at, "投稿日時順", default_order: :desc %>  
     <div class="posts">
-        <% @results.each do |post| %>
+        <% @posts.each do |post| %>
             <%= link_to post do %>
                 <div class="post mt-6 mb-6">
                 <%= render post %>
