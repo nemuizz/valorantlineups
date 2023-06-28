@@ -30,6 +30,11 @@ textarea{
     max-width: 80%;
 }
 
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
 /*top.html.erb*/
 body{
     background-color: #ece8e1;
@@ -69,3 +74,31 @@ body{
     margin-bottom: 5px;
     border-bottom: #212529 solid 1px;
 }
+
+/* pagination */
+
+.pagination{
+     justify-content: center;   
+ }
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+    border: #696969;
+    color: #696969;   /*文字の色を変える*/
+    background: white;
+    
+  }
+  
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {     
+   
+    border-radius: 5px;     /*角を丸くする*/
+  }
+  
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {        
+    border-radius: 5px;    /*角を丸くする*/
+  }
+
+  .page-item.active .page-link {
+     background-color: #ff4655;   
+    }

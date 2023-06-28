@@ -18,13 +18,13 @@
 
   <div id="posts" class="mt-2">
     <% @posts.each do |post| %>
-      <%= link_to post do %>
+      
         <div class="post">
           <%= render post %>
         </div>
-      <% end %>
+      
     <% end %>
   </div>
-
+  <%= paginate @posts, theme: 'bootstrap-5' %>
   <%= link_to "New post", new_post_path %>
 </div>

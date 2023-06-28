@@ -4,11 +4,12 @@
         <%= sort_link @q, :updated_at, "投稿日時順", default_order: :desc %>  
     <div class="posts">
         <% @posts.each do |post| %>
-            <%= link_to post do %>
+            
                 <div class="post mt-6 mb-6">
                 <%= render post %>
                 </div>
-            <% end %>
+            
         <% end %>    
     </div>
+    <%= paginate @posts, theme: 'bootstrap-5' %>
 </div>
