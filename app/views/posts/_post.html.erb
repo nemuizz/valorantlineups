@@ -5,22 +5,31 @@
 			<%= "#{post.map_name} / #{post.agent_name}" %>
 		</div>
 	<% end %>
+	
+	<% if user_signed_in? %>
+		<%= render "posts/bookmark_link", post: post %>
+	<% else %>
+		<%= button_to new_user_session_path do %>
+			<i class="fa-regular fa-bookmark fa-lg"></i>
+		<% end %>
+	<% end %>
+
 	<div class="image-container row">
-		<% if post.hit_image.attached? %>
+		<% if post.hit.attached? %>
 			<div data-bs-toggle="modal" data-bs-target=".bd-hit-modal-lg-<%= post.id %>" class="col">
-				<%= image_tag post.hit_image, class: "img-fluid" %> <%#size 709x400%>
+				<%= image_tag post.hit, class: "img-fluid zoom" %> <%#size 709x400%>
 			</div>
 		<% end %>
 		
-		<% if post.position_image.attached? %>
+		<% if post.position.attached? %>
 			<div data-bs-toggle="modal" data-bs-target=".bd-position-modal-lg-<%= post.id %>" class="col">
-				<%= image_tag post.position_image, class: "img-fluid" %>
+				<%= image_tag post.position, class: "img-fluid zoom" %>
 			</div> 
 		<% end %>
 		
-		<% if post.angle_image.attached? %>
+		<% if post.angle.attached? %>
 			<div data-bs-toggle="modal" data-bs-target=".bd-angle-modal-lg-<%= post.id %>" class="col">
-				<%= image_tag post.angle_image, class: "img-fluid" %>
+				<%= image_tag post.angle, class: "img-fluid zoom" %>
 			</div>
 		<% end %>
 	</div>
@@ -31,7 +40,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 
-			<%= image_tag post.hit_image, class: "img-fluid" if post.hit_image.attached? %>
+			<%= image_tag post.hit, class: "img-fluid" if post.hit.attached? %>
 
 		</div>
 	</div>
@@ -41,7 +50,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 
-			<%= image_tag post.position_image, class: "img-fluid" if post.position_image.attached? %>
+			<%= image_tag post.position, class: "img-fluid" if post.position.attached? %>
 
 		</div>
 	</div>
@@ -51,7 +60,7 @@
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 
-			<%= image_tag post.angle_image, class: "img-fluid" if post.angle_image.attached? %>
+			<%= image_tag post.angle, class: "img-fluid" if post.angle.attached? %>
 
 		</div>
 	</div>

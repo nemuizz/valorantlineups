@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  */
 @import "bootstrap";
+@import "font-awesome";
 
 /*universal layouts*/
 a{
@@ -67,13 +68,20 @@ body{
     margin: 3px;
 }
 
-/* index.html */
+/* モーダル用マウスポインタ */
+.zoom:hover{
+    cursor: zoom-in;
+}
 
 .post{
     margin-top: 5px;
     margin-bottom: 5px;
     border-bottom: #212529 solid 1px;
 }
+
+// _post.html.erb
+
+
 
 /* pagination */
 
@@ -102,3 +110,11 @@ body{
   .page-item.active .page-link {
      background-color: #ff4655;   
     }
+
+.button_to{
+    display: inline;
+}
+
+.button_to button{
+    border: none;
+}

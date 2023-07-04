@@ -2,6 +2,7 @@
     <h1>Searched by:  </h1><%= params[:q] %>
     
         <%= sort_link @q, :updated_at, "投稿日時順", default_order: :desc %>  
+        <%= sort_link @q, :favorites_count,  "ブックマーク数" %>
     <div class="posts">
         <% @posts.each do |post| %>
             

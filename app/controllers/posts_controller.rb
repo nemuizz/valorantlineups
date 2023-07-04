@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all.page(params[:page]).per(15)
+    @posts = Post.with_attached_hit.with_attached_position.with_attached_angle.includes(:favorite, :map, :agent).page(params[:page]).per(15)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -64,8 +64,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def search   
-    @posts = @q.result(distinct: true).page(params[:page]).per(15)
+  def search  
+     
+    @posts = @q.result(distinct: true).order(favorites_count: "desc").with_attached_hit.with_attached_position.with_attached_angle.includes(:favorites, :map, :agent).page(params[:page]).per(15)
     
   end
 
@@ -80,8 +81,8 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.fetch(:post, {})
-      params.require(:post).permit(:title, :map_id, :agent_id, :content, :position_image, :angle_image, :hit_image )
-      params.require(:q).permit(:sorts)
+      params.require(:post).permit(:title, :map_id, :agent_id, :content, :position, :angle, :hit )
+      
     end
 
     def set_q
