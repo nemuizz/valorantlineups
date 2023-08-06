@@ -1,16 +1,20 @@
 <div class="container">
-    <h1>Searched by:  </h1><%= params[:q] %>
-    
-        <%= sort_link @q, :updated_at, "投稿日時順", default_order: :desc %>  
-        <%= sort_link @q, :favorites_count,  "ブックマーク数" %>
-    <div class="posts">
-        <% @posts.each do |post| %>
+  <div class="row">
+  	<h1>Searched by: <%= map_id_to_name(params[:q][:map_id_eq]) %> / <%= agent_id_to_name(params[:q][:agent_id_eq]) %> </h1>
+      <div>
+				<h4 class="d-inline me-2">並び替え</h4>
+      	<%= sort_link @q, :updated_at, "投稿日時順", default_order: :desc, class: "btn btn-danger btn-sm me-2 align-top", role: "button" %>  
+      	<%= sort_link @q, :favorites_count,  "ブックマーク数", default_order: :desc, class: "btn btn-danger btn-sm align-top", role: "button" %>
+			</div>
+  </div>
+  <div class="posts">
+    <% @posts.each do |post| %>
             
-                <div class="post mt-6 mb-6">
-                <%= render post %>
-                </div>
+      <div class="post mt-6 mb-6">
+    		<%= render post %>
+      </div>
             
-        <% end %>    
-    </div>
-    <%= paginate @posts, theme: 'bootstrap-5' %>
+    <% end %>    
+  </div>
+  <%= paginate @posts, theme: 'bootstrap-5' %>
 </div>
