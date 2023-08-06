@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_q, only: [:index, :search]
   before_action :set_map_and_agent, only: [:new, :edit, :search, :index]
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
   # GET /posts or /posts.json
   def index
     @posts = Post.with_attached_hit.with_attached_position.with_attached_angle.includes(:favorite, :map, :agent).page(params[:page]).per(15)

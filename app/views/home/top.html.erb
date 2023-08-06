@@ -1,22 +1,67 @@
 <div class="container">
-    <%= search_form_for @q, url: search_posts_path do |f| %>
-        <div class="mt30 d-flex flex-wrap icon-container">
-            <% @agents.each do |agent| %>
-                <%= f.radio_button :agent_id_eq, agent.id, :id => "agent#{agent.id}", :class => "radio_btn" %>
-                <%= f.label :agent_id_eq, image_tag("/agent_images/#{agent.agent_name}.png"), :for => "agent#{agent.id}" %>
-            <% end %>
-        </div>
-        <div class="mt30 d-flex flex-wrap icon-container">
-			<% @maps.each do |map| %>
-				<%= f.radio_button :map_id_eq, map.id, :id => "map#{map.id}", :class => "radio_btn" %>
-				<%= f.label :map_id_eq, image_tag("/map_images/#{map.map_name}.png"), :for => "map#{map.id}" %>
-			<% end %>
-        </div>
-		<div class="mt30">
-            <%= f.label "フリーワード:" %>    
-		    <%= f.search_field :content_or_title_cont %>		
+	<div id="search" class="mt-4">
+		<h1 class="d-inline me-3 fs-2">Search Lineups</h1><p class="d-inline fs-5">エージェントとマップを選択してください。</p>
+		<%= search_form_for @q, url: search_posts_path do |f| %>
+			<div class="mt30 d-flex flex-wrap icon-container">
+				<% @agents.each do |agent| %>
+						<%= f.radio_button :agent_id_eq, agent.id, :id => "agent#{agent.id}", :class => "radio_btn" %>
+						<%= f.label :agent_id_eq, image_tag("/agent_images/#{agent.agent_name}.png"), :for => "agent#{agent.id}" %>
+					<% end %>
+			</div>
+			<div class="mt30 d-flex flex-wrap icon-container">
+				<% @maps.each do |map| %>
+					<%= f.radio_button :map_id_eq, map.id, :id => "map#{map.id}", :class => "radio_btn" %>
+					<%= f.label :map_id_eq, image_tag("/map_images/#{map.map_name}.png"), :for => "map#{map.id}" %>
+				<% end %>
+			</div>
+			<div class="mt30">
+							<%= f.label "フリーワード:" %>    
+					<%= f.search_field :content_or_title_cont %>		
+			</div>
+				<br>
+				<%= f.submit "search" %>
+		<% end %>
+	</div>
+  <div class="row mt-5">
+    <h1 id="about">About</h1>
+		<ul style="list-style: none;">
+			<li class="lh-lg fs-5"><span class="red">./</span> valorantの定点を検索することができます。</li>
+			<li class="lh-lg fs-5"><span class="red">./</span> ユーザー登録、ログインを行うことで、定点の投稿、投稿のお気に入り登録をすることができます。</li>
+			<li class="lh-lg fs-5"><span class="red">./</span> 自分の投稿、お気に入りはユーザーページから一覧を確認できます。</li>	
+			<li class="lh-lg fs-5"><span class="red">./</span> 皆さんの普段使っている定点を是非シェアしてみてください！</li>
+		</ul>
+  </div>
+	<div class="row mt-3 justify-content-evenly">
+		<div class="card" style="width: 18rem;">
+			<img src="/about_images/search_image.png" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Search</h5>
+				<p class="card-text">ページトップからエージェント、マップを指定して検索できます。また、任意でフリーワード入力で検索することもできます。</p>
+				<a href="#search" class="btn btn-danger">ページトップへ</a>
+			</div>
+		</div>	
+		
+		<div class="card" style="width: 18rem;">
+			<img src="..." class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Post</h5>
+				<p class="card-text">ユーザー登録・ログインをすると投稿作成ができます。投稿には、定点着弾地点、立ち位置、視点のスクリーンショットが必要となります。</p>
+				<a href="/posts/new" class="btn btn-danger">投稿する</a>
+			</div>
 		</div>
-        <br>
-        <%= f.submit "search" %>
-    <% end %>
+
+		<div class="card" style="width: 18rem;">
+			<img src="/about_images/bookmark_image.png" class="card-img-top" alt="...">
+			<div class="card-body">
+				<h5 class="card-title">Bookmark</h5>
+				<p class="card-text">ログイン後、投稿の <i class="fa-regular fa-bookmark"></i> をクリックすることでお気に入り（ブックマーク）ができます。お気に入りはユーザーページに保存されます。</p>
+				<% if user_signed_in? %>
+					<%= link_to "ユーザーページ", user_path(current_user.id), class: "btn btn-danger" %>
+				<% else %>
+					<%= link_to "ログイン", new_user_session_path, class: "btn btn-danger" %>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
 </div>

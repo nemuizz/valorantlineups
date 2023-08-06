@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row text-center">
+    <h2><%= @user.name %></h2>
+    <p>投稿数： <%= @posts.count %></p>
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <%= link_to "ユーザーを編集", edit_user_registration_path  %>
+    <% end %>
+  </div>
+  
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item"><%= link_to "投稿", user_path(@user), class: "nav-link" %></li>
+    <li class="nav-item"><%= link_to "ブックマーク", "/users/#{@user.id}/favorites", class: "nav-link active" %></li>
+  </ul>
+  <% @favorites.each do |favorite| %>
+    <% post = Post.find_by(id: favorite.post_id) %>
+    <div class="post">
+      <%= render "posts/post", post: post %>
+    </div>
+  <% end %>
+</div>

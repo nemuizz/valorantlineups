@@ -2,7 +2,7 @@
 	<%= link_to post do %>
 		<div>	
 			<h2><%= post.title %></h2>
-			<%= "#{post.map_name} / #{post.agent_name}" %>
+			<p class="fs-5"><%= "#{post.map_name} / #{post.agent_name}" %></p>
 		</div>
 	<% end %>
 	
@@ -12,6 +12,7 @@
 		<%= button_to new_user_session_path do %>
 			<i class="fa-regular fa-bookmark fa-lg"></i>
 		<% end %>
+		<%= post.favorites_count %>
 	<% end %>
 
 	<div class="image-container row">

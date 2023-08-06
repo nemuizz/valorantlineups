@@ -36,6 +36,24 @@ textarea{
     height: auto;
 }
 
+.btn{
+   background-color: #ff4655;
+   border-color: #ff4655;
+   border-radius: 1em;
+}
+
+.notice{
+    background-color: #ff4655;
+    color: white;
+    text-align: center;
+}
+
+.alert{
+    background-color: #ff4655;
+    color: white;
+    text-align: center;
+}
+
 /*top.html.erb*/
 body{
     background-color: #ece8e1;
@@ -44,28 +62,42 @@ body{
 #navbarNav{
     justify-content: flex-end;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba($color: white, $alpha: 1.0);
+}
+
 .radio_btn{
     display: none;
+    margin: 5px;
 }
 .radio_btn + label img {
     opacity: 0.8;
+
 }
 .radio_btn:checked + label img{
     opacity: 1;
     border: solid rgb(212, 177, 22) 2px;
     border-radius: 3%;
+    margin: 1px;
 }
 .radio_btn:hover + label img{
     opacity: 1;
 }
-.radio_btn{
-    margin: 5px;
-}
+
 .mt30{
     margin-top: 30px;
 }
 .icon-container img{
     margin: 3px;
+}
+
+.card-img-top{
+    border: solid #CFCBC5 1px;
+}
+
+.red{
+    color: #ff4655;
 }
 
 /* モーダル用マウスポインタ */
@@ -117,4 +149,33 @@ body{
 
 .button_to button{
     border: none;
+}
+
+// tabの色変更
+.nav-tabs .nav-link.active{
+    background-color: #ff4655;
+    color:white ;
+}
+.nav-tabs{
+    border-bottom: #696969 solid 1px;
+}
+.nav-tabs .nav-link{
+    border: #696969 solid 1px;
+    color: #696969;
+}
+
+// cards
+.card{
+    background-color: #ece8e1;
+}
+
+// footerを固定
+body{
+    display:flex;
+    flex-direction:column;
+    min-height: 100vh;
+}
+
+main{
+        flex: 1;
 }
