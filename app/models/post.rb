@@ -8,7 +8,7 @@ class Post < ApplicationRecord
     validates :agent_id, presence: true
     validates :map_id, presence: true
     validates :title, presence: true
-    validates :title, length: {maximum: 30}
+    validates :title, length: {maximum: 50}
     validates :content, length: {maximum: 500 }
 
     has_one_attached :position

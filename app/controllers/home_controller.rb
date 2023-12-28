@@ -4,4 +4,7 @@ class HomeController < ApplicationController
     @agents = Agent.all
     @maps = Map.all
   end
+
+  def policy
+  end
 end

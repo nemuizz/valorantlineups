@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row text-center">
+  <div class="row text-center  mt-3 mb-2">
     <h2><%= @user.name %></h2>
     <p>投稿数： <%= @posts.count %></p>
     <% if user_signed_in? && @user.id == current_user.id %>
@@ -12,10 +12,16 @@
     <li class="nav-item"><%= link_to "投稿", user_path(@user), class: "nav-link" %></li>
     <li class="nav-item"><%= link_to "ブックマーク", "/users/#{@user.id}/favorites", class: "nav-link active" %></li>
   </ul>
-  <% @favorites.each do |favorite| %>
-    <% post = Post.find_by(id: favorite.post_id) %>
-    <div class="post">
-      <%= render "posts/post", post: post %>
+  <% if @posts.size != 0 %>
+    <% @posts.each do |post| %>
+      <div class="post">
+        <%= render "posts/post", post: post %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="mt-5">
+      <h2 class="fs-3 text-center">ブックマークした投稿がありません。</h2>
+      
     </div>
   <% end %>
 </div>

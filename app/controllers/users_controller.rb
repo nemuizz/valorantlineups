@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
   def favorites
     @user = User.find(params[:id])
-    @posts = Post.where(user_id: @user.id)
-    @favorites = Favorite.where(user_id: @user.id)
+    
+    favorites = Favorite.where(user_id: @user.id).pluck(:post_id)
+    @posts = Post.find(favorites)
   end
 end

@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_q, only: [:index, :search]
-  before_action :set_map_and_agent, only: [:new, :edit, :search, :index]
+  before_action :set_map_and_agent, only: [:new, :edit, :search, :index, :update, :create]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy, :create]
+  before_action :ensure_correct_user, only: [:edit, :update, :destroy]
   # GET /posts or /posts.json
   def index
     @posts = Post.with_attached_hit.with_attached_position.with_attached_angle.includes(:favorite, :map, :agent).page(params[:page]).per(15)
@@ -92,6 +93,13 @@ class PostsController < ApplicationController
     def set_map_and_agent
       @maps = Map.all
       @agents = Agent.all
+    end
+
+    def ensure_correct_user
+      if @post.user_id != current_user.id
+        flash[:notice] = "You are not authorized to access."
+        redirect_to "/"
+      end
     end
 
 end

@@ -68,14 +68,20 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-rails'
-gem 'rspec-rails'
+
 gem 'devise'
 gem 'ransack', '3.2.1'
 gem 'kaminari'
 gem 'bootstrap5-kaminari-views'
 gem 'font-awesome-sass'
+
+gem 'omniauth', '1.9.1'
+gem 'omniauth-twitter'
+gem 'dotenv-rails'

@@ -7,14 +7,21 @@
       	<%= sort_link @q, :favorites_count,  "ブックマーク数", default_order: :desc, class: "btn btn-danger btn-sm align-top", role: "button" %>
 			</div>
   </div>
-  <div class="posts">
-    <% @posts.each do |post| %>
-            
-      <div class="post mt-6 mb-6">
-    		<%= render post %>
-      </div>
-            
-    <% end %>    
-  </div>
-  <%= paginate @posts, theme: 'bootstrap-5' %>
+  <% if @posts.size != 0 %>
+    <div class="posts">   
+      <% @posts.each do |post| %>
+              
+        <div class="post mt-6 mb-6">
+          <%= render post %>
+        </div>
+              
+      <% end %>    
+    </div>
+    <%= paginate @posts, theme: 'bootstrap-5' %>
+  <% else %>
+    <div class="mt-5">
+      <h2 class="fs-3 text-center">投稿がありません。</h2>
+      <%= link_to "戻る", :back, class: "d-block text-center fs-5" %>
+    </div>
+  <% end %>
 </div>
