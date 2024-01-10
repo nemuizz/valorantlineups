@@ -21,7 +21,7 @@ agents = Agent.create([
 
 maps = Map.create([
     {map_name: 'Split'}, {map_name: 'Bind'}, 
-    {map_name: 'Haven'}, {map_name: 'Acsent'}, 
+    {map_name: 'Haven'}, {map_name: 'Ascent'}, 
     {map_name: 'Icebox'}, {map_name: 'Breeze'}, 
     {map_name: 'Fracture'}, {map_name: 'Pearl'}, 
     {map_name: 'Lotus'}, {map_name: 'Sunset'}
