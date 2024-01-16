@@ -73,6 +73,10 @@ group :test do
   gem 'faker'
 end
 
+group :production do
+  gem 'aws-sdk-s3'
+end
+
 gem 'bootstrap', '~> 5.0.2'
 gem 'jquery-rails'
 
