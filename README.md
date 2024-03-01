@@ -3,7 +3,7 @@
 # サービス概要
 
 ### サービス名
-VALORANT_Lineups
+VALORANT_Lineups  
 https://www.valorant-lineups.net
 
 ### 概要
@@ -13,26 +13,26 @@ VALORANTというゲームの攻略情報を検索、共有するためのサイ
 私自身がこのゲームをプレイしていた経験から、暗記系の攻略情報を素早く検索したり、備忘録として残しておけるようなサイトがあれば便利だと思い、作成しました。
 
 # 使い方
-ホーム画面から選択したキャラクター、マップ、入力したフリーワードから検索を行うことができます。
+ホーム画面から選択したキャラクター、マップ、入力したフリーワードから検索を行うことができます。  
 ログインをすることで投稿機能、いいね機能が使用できます。
-[![Image from Gyazo](https://i.gyazo.com/ae7eb05cb1a15775274a74624c8dd3cb.gif)](https://gyazo.com/ae7eb05cb1a15775274a74624c8dd3cb)
+
 
 
 
 # 使用技術
-*Ruby
-*Ruby on Rails
-*Mysql
-*Nginx
-*Puma
-*AWS
-	*VPC
-	*EC2
-	*RDS
-	*Route53
-	*S3
-*RSpec
-*Twitter API
+* Ruby
+* Ruby on Rails
+* Mysql
+* Nginx
+* Puma
+* AWS
+	* VPC
+	* EC2
+	* RDS
+	* Route53
+	* S3
+* RSpec
+* Twitter API
 
 # 選定理由
 
@@ -42,18 +42,18 @@ VALORANTというゲームの攻略情報を検索、共有するためのサイ
 | ユーザー登録、ログイン機能 | devise, twitter api(amniouth) |
 | 画像付き投稿機能 | activestorage |
 | いいね機能(非同期) | turbo stream |
-| ページネーション | kaminari ｜
+| ページネーション | kaminari |
 | 検索機能 | ransack |
 | ソート機能 | ransack |
 
 #テスト
-*RSpec
-	*単体テスト(model spec)
-	*統合テスト(system spec)
+* RSpec
+	* 単体テスト(model spec)
+	* 統合テスト(system spec)
 
 
 # ER図
-![](https://viewer.diagrams.net/?tags=%7B%7D&highlight=000000&edit=_blank&layers=1&nav=1&title=db_table.drawio#R7V1dd6I6FP01PrZLwI%2F2cbR1Zm7t3N5%2BzNy5L12pRGCKhAmx6vz6m0BAJWChgiJhra4ZCfEA5%2BzsEzeH0NKGs%2BVnDFzzFunQbqltfdnSrlqqqrQ7Hfofa1kFLd3LbtBgYEvnndYND9YfGH6Tt84tHXpbHQlCNrHc7cYJchw4IVttAGO02O42Rfb2UV1gQKHhYQJssfWHpRMzaL3ottftX6BlmOGRlTbfMwNhZ97gmUBHi60muCQj5BB%2BincQz4ADHUL33AL8CnGre20Swq70U0sd0b8p631uIGTYELiWdz5BM9o88WiX0RTMLJu5ecPQgBuih9OuW9oQI0SCT7PlENosVmEYgnMapeyN%2FICZ3QxfGJ69rcavbeJ8WWjfye2tcdd%2FOeNW3oA95%2F7lviGr0OFQp%2F7nm%2FRQFlndQxsQCznX6z0D6OifWHRpp%2Bv7PxCjR3QLHHrxA48ATNb7kMO7jyx6etqVEnbh2226LV4aP08PzfEE7rgelaObGjQg2dGxxwOub6GNe%2B4zRDNI8Ip2WKwxFiHJ3MRX2Ih9p7xtoxRwJBmRwegYd8jygcUHptbhdviw7IeQDE0El86%2FtRnmmKFOzFAvbihwjWCIfti48HWTj6I8iFJrBiktI6KUfsUg1WlvI0G5%2BCiketuG1Hb3oJASEeUij5J0HFaU0F32kYAXH0A%2BBngG0xgIaE4iwHIo%2FQYgmSDbBq5n%2Bd2DFtOy9TFYoTkJDYVbg6m1hPp9kMBYXwq%2FMTXmcYSxVBCCmu0GtmU49POEIo4dcYChR89lDDzCe6Ri8g1iApc7QRTShhaLcTjaN0CmdhNApvbb6XjaCmDeaGnvj%2F8wUPTSiQXsezpPAI7hx2w7JMyvOkbuYzj4WIPLcAbx9RsMMrXvfDrSh8hGLLJOwAd%2BN%2F%2FiugP6Ry932D7vtrr0BIZ0W1lv0z%2FWHZMhcjyCgeWHA9JALSAL1oAglx%2FHhtPwNDB3Jvv8ggihiT8trDtR%2FX6seWy1jKHVyopsR4js3U2e2CJ6rVPbJ23T0nXoBEOSTRPBOt4JoUz0f%2BTzeDDiAzFjPLTM8dgIgJbT%2F9zY2iu5rQGbYt8BBA7Q3NG9Mvi2m8i3z%2FQ7Q7X1qR3khm9%2FP7J%2Fn8bjVjShrhIKQvoN%2Bg48F0wsxxgH3%2BzFYNItAybLVuqwVQuFTSZzB8BNT2bmT55kFsP8vWMzf1%2BI7OhGyRPcAw36jAHoZQ5A3an%2BQgjs3IOYUb2awPOVi%2Fe7JF84IKQj9cuG1Msh9ctjk3qo6H4wtNWi9MvM7q87pSuipgsM6jzpSD07JOpM6lBXfik6%2BqH9%2BLka%2F7bGN38tH89yzd0aDk%2Fl8MxyWxEknhjJ06DsXSCUi7ITPSFKpjPg1pmv98SDdHzdafi6GL7uHpuvuxUcwBnHZyezt%2BvO16LQ6SLPYvevn60ZnWw%2FO2DGzpz6SRr2zo4O6di737B3Mex9cWz2vqjgAM44PvuZvV139hYVTf9c5aXu7NCQjro7jVJSDHdH9cNH4%2B7OCUslnUYriVwhiiWsrC%2Bo0g5Yu3JRLmyO3UgkzBoZ3vx3f2OYrwMNOnej8ajf%2FimppC0gISt3pxN154BEnRjJ6vL0O95Ox2WtaTrxskWWtq1X6D1P6BEZU4el4tUKc0aiLhAHdebp5NvTKchIRYPE1fydrCXfSnlFImLRt0SJNkf5uJK9MLgq9fyKWOhdp4J%2BRcobFsmuEO9YBOm4qenPiRT58rVY%2By1RAsghieVPAEcv61fE8u%2BTrutXpLzJkewK8S6H%2F9BsnauK9sWEdNwenkbD7YVz%2B9Gr%2B6Nfn3Wo7o%2BA2hB7GEbZH9nKAQn5eF3U2BhGGo2ttb4PnbeCX%2BmUxtSNxJZxyJ%2BexKbWW2JTG4ktcoUose3KyzLJazlQIl%2BqbuS1ssg%2Fq7xWXmIX5bUKjvqs%2Fi9MW9vl7%2FxUH7d2iDEramuM6mkLLx6emIBtPX37%2Bs%2FT9cn%2FIHMhtqjLIH4IduWcIpSmv30cR5nMFQsk054%2BzJ%2BXzpN9NvsOpotn%2FH0mac1aCVQfLZl5CK5PDOVpMPsuFMpF7ImeEGUTF3jeAmE2h9ctg2GexRgzFjx1Wi8cHXWm7%2BQH1jUh7psrG1PaNJGBHGBvrmqM2elAnSfRdZ8x8sPLGn9BQlZchQNzgmiTSWZbKxvHFz%2BOL3ecvnbyepnkZIoofKXtaG3199ZFzrzc8V6PgSQUtPnL45y%2BOLqBkdSwZh%2FGvTB9hnXhCUKpcpkwEBWlgBybHDpRTNsdtHs2AAYmwtYfFqoQ9JuB9LcX1swGDvwCgR5rGiD%2FPQkpjJx1SlYNTXX3cNhHU03EQWkPciUUs%2BXTVA%2BgnyYl%2BYVpEch%2BQ7FOCwzc98bs7kEgleSa7ApRO3tyrN9z%2BPXqyHDIraRWAi%2FpEzilVyh%2BMpk7BIByCHRSJ5TkqWJBCSVBpz1wQtl3jdPC%2BQPqVmiv5GxykTladc8mCcVwwbqZ6StC9Gw2jF4w%2FWSQyOnVzTqVwJF0WSZPfUeTZcrKMgkFmYlZJv66rOJW6szx67VmWaa4MpFd0cmfZeLWDkEG%2B74ko05Zo5DCkESa%2FzhOMpk7BFDEVeMOIC7TeOHVvyE%2FsI2fbOO8G25eLTd3XoVZJr8oHX9p335qNB9Vm2L0zl%2FDxYnR%2FlfpZYHVRgeePteWY2%2FUi17KGN6%2F5C9hTXsDX7y%2F2uvGMBecQaEI1MQJ8YxOG3bPXVqy6%2BRaP%2BNEozydXMvx6IfUE84cqSoaDKejk2uqAAOJdHKtsLKGk1c2NLGuodHJ98CLdAqG1igYhSsY%2BRPK0XVyTV4FQ5PyQZdkV4gKBntbSRHrJtdL3ciBGfkySo7HXpqMUlZGObomru33hMxJZ5TCnqc5eU1cq9z992NmjSKel6mpJh7WeFe94PrD2vau96K9q22Hv2BLL7SmmxghshlbinbzFumQ9fgf)
+[![Image from Gyazo](https://i.gyazo.com/165c6b472e473888281f8af9091b7afd.png)](https://gyazo.com/165c6b472e473888281f8af9091b7afd)
 
 # 工夫点
 
@@ -62,5 +62,5 @@ VALORANTというゲームの攻略情報を検索、共有するためのサイ
 [![Image from Gyazo](https://i.gyazo.com/12a38cae065bb68bf1037bae568f9f5d.gif)](https://gyazo.com/12a38cae065bb68bf1037bae568f9f5d)
 
 # 今後の展望・追加機能について
-現状、フロントエンドをbootstrapに頼り切ってしまっているので、JavaScriptなど、フロントの技術も磨いていきたいです。
+現状、フロントエンドをbootstrapに頼り切ってしまっているので、JavaScriptなど、フロントの技術も磨いていきたいです。  
 インフラ側では、システムの冗長化やCI/CDなど、より実用的な技術の習得、実践を目指します。
