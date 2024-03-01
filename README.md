@@ -55,7 +55,7 @@ VALORANTというゲームの攻略情報を検索、共有するためのサイ
 [![Image from Gyazo](https://i.gyazo.com/165c6b472e473888281f8af9091b7afd.png)](https://gyazo.com/165c6b472e473888281f8af9091b7afd)
 
 # 工夫点
-[![Image from Gyazo](https://i.gyazo.com/12a38cae065bb68bf1037bae568f9f5d.gif)](https://gyazo.com/12a38cae065bb68bf1037bae568f9f5d)
+[![Image from Gyazo](https://i.gyazo.com/6a23b32d70e1face140dba7aefce3ee6.gif)](https://gyazo.com/6a23b32d70e1face140dba7aefce3ee6)
 
 ###  1.ホーム画面からログイン不要で検索を行うことができるようにフォームを設置しています。ゲームプレイ中にも簡単に検索ができます。
 ###  2.検索フォームにはチェックボックスやラジオボタンではなく、画像アイコンを使用することでより直感的な操作を実現しました。
