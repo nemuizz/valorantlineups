@@ -20,9 +20,9 @@ VALORANTというゲームの攻略情報を検索、共有するためのサイ
 
 
 # 使用技術
-* Ruby
-* Ruby on Rails
-* Mysql
+* Ruby 3.2.2
+* Ruby on Rails 7.0.4.3
+* Mysql 8.0.33
 * Nginx
 * Puma
 * AWS
